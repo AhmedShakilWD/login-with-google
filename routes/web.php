@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('auth/google',[GoogleController::class,'GoogleLogin'])->name('login');
+Route::any('auth/google/callback',[GoogleController::class,'GoogleCallback'])->name('callback');
+Route::get('/dashbord', function () {
+    return view('dashboard');
 });
