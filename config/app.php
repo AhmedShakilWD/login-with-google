@@ -1,5 +1,5 @@
 <?php
-
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -186,6 +187,10 @@ return [
         // 'Example' => App\Facades\Example::class,
 
         'socialate' => Laravel\Socialite\Facades\Socialite::class,
+        // ...
     ])->toArray(),
+    
+    
+    
 
 ];

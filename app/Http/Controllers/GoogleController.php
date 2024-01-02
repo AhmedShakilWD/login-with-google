@@ -27,7 +27,7 @@ class GoogleController extends Controller
                    $userSave= User::create([
                     'name'=>$user->getName(),
                     'email'=>$user->getEmail(),
-                    'passsword'=>'123445dummy',
+                    'password' =>'123445dummy',
                     'google_id'=>$user->getId()
                    ]);
 
@@ -43,7 +43,7 @@ class GoogleController extends Controller
             }
         
             catch(\Throwable $th){
-            dd("something went wrong".$th->getMessage());
+                     dd($th->getMessage());
             }
     }
 }

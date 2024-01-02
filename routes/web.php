@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,6 @@ Route::any('auth/google/callback',[GoogleController::class,'GoogleCallback'])->n
 Route::get('/dashbord', function () {
     return view('dashboard');
 });
+
+// PDF Route
+Route::get('/pdf',[PdfController::class,'index'])->name('pdf');
